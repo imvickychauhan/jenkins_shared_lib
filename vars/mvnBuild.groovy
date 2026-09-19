@@ -1,6 +1,5 @@
 def call(){
-    // This looks up the Java installation and dynamically injects its path
-    withEnv(["JAVA_HOME=${tool 'jdk8'}"]) {
-        sh 'mvn clean install -DskipTests -U'
+    withEnv(["JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64"]) {
+        sh 'mvn clean install -DskipTests'
     }
 }
